@@ -149,7 +149,7 @@ Everything is optional. Defaults are picked so the MCP just runs.
 |---|---|---|---|
 | `OPENAI_API_KEY` | No | unset | Enables vibe search via `text-embedding-3-small`. Without it, search falls back to keyword scoring. |
 | `REFERO_API_BASE` | No | `https://styles.refero.design` | Override if Refero ever moves the API or you're pointing at a fixture. |
-| `REFERO_CACHE_DIR` | No | `~/.cache/refero-mcp` | Where the local catalog mirror, embeddings, and detail cache live. |
+| `REFERO_CACHE_DIR` | No | `~/.refero-cache` | Where the local catalog mirror, embeddings, and detail cache live. |
 | `REFERO_CACHE_TTL_MS` | No | `86400000` (24h) | How long a cached page is considered fresh. |
 | `REFERO_MCP_VAULT_DIR` | No (required for project writes) | unset | Absolute path to the vault root that `refero_design_md` writes into. If unset, the tool returns the markdown but doesn't write to disk. |
 

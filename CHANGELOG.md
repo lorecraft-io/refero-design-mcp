@@ -11,14 +11,14 @@ Initial release. Wraps the (undocumented) `styles.refero.design` API and exposes
 ### Added
 
 - **6 MCP tools:**
-  - `search_styles` — natural-language or keyword search across a local mirror of the Refero catalog. Uses OpenAI `text-embedding-3-small` against each style's `northStar` summary when `OPENAI_API_KEY` is set; falls back to keyword scoring otherwise.
-  - `get_style` — fetch full detail (`fullResult.designSystem`, `raw` tokens, `meta`) and Refero's own `similar` array for one style.
-  - `list_similar` — return Refero's free, server-side similarity ranking for a style id or site name.
-  - `get_design_md` — generate DESIGN.md content from `designSystem` without writing it to disk.
-  - `save_to_project` — generate + write DESIGN.md into a project under `REFERO_MCP_VAULT_DIR`.
-  - `refresh_catalog` — walk the paginated `/api/styles` endpoint, mirror locally, refresh embeddings for new entries.
+  - `refero_search` — natural-language or keyword search across a local mirror of the Refero catalog. Uses OpenAI `text-embedding-3-small` against each style's `northStar` summary when `OPENAI_API_KEY` is set; falls back to keyword scoring otherwise.
+  - `refero_get` — fetch full detail (`fullResult.designSystem`, `raw` tokens, `meta`) for one style by uuid, hostname, or site name.
+  - `refero_similar` — return Refero's free, server-side similarity ranking for a style id or site name.
+  - `refero_list` — paginated browse of the local catalog mirror with optional theme/tag filters.
+  - `refero_design_md` — generate a DESIGN.md from `style.fullResult.designSystem`. Returns the markdown body; if `save_to_project` is passed and `REFERO_MCP_VAULT_DIR` is set, also writes to `<vault>/05-Projects/<NAME>/DESIGN.md`.
+  - `refero_refresh` — walk the paginated `/api/styles` endpoint, mirror locally, refresh embeddings for new entries.
 - **Empirical API surface document** at `docs/api-surface.md` covering both endpoints, all observed query parameters (and which ones are silently ignored), full response shapes, the date-format inconsistency between list and detail, and pagination semantics.
-- **Local catalog mirror** under `REFERO_CACHE_DIR` (default `~/.cache/refero-mcp`), keyed by style UUID with `createdAt` normalized to ISO 8601.
+- **Local catalog mirror** under `REFERO_CACHE_DIR` (default `~/.refero-cache`), keyed by style UUID with `createdAt` normalized to ISO 8601.
 - **Polite refresh strategy** — 250ms delay between page fetches, single retry on `5xx`, no retry on `4xx`.
 - **DESIGN.md generation** from `style.fullResult.designSystem` — dos, donts, tags, theme, role-tagged colors, fonts. Output is compatible with the `/stitch-design-taste` and `/design-taste-frontend` skills.
 - **Configurable vault root** via `REFERO_MCP_VAULT_DIR` so `save_to_project` writes to the right place for any user, not just the author.
