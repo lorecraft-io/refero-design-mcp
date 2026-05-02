@@ -155,7 +155,7 @@ Everything is optional. Defaults are picked so the MCP just runs.
 
 A copy-paste `.env.example` ships in the repo root.
 
-> There's no default for `REFERO_MCP_VAULT_DIR`. The previous draft hardcoded my laptop path, which worked great for exactly one machine on Earth. The reviewer caught it. Now it just throws — rude but correct.
+> There's no default for `REFERO_MCP_VAULT_DIR`. The previous draft hardcoded my laptop path, which worked great for exactly one machine on Earth. The reviewer caught it. Now if you don't set it, the tool just refuses to write — rude, but better than dropping files into a folder that doesn't exist on your computer.
 
 <p align="right"><a href="#top">↑ back to top</a></p>
 
