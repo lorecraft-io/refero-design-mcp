@@ -2,6 +2,8 @@
 
 <div align="center">
 
+<img src="https://raw.githubusercontent.com/lorecraft-io/refero-mcp/main/.github/banner.png" alt="refero-mcp" width="100%" />
+
 # Refero MCP
 
 **Search [styles.refero.design](https://styles.refero.design) in plain English and drop a DESIGN.md into any project.**
