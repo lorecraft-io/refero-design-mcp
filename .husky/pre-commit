@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+# refero-mcp pre-commit hook
+# - Scans staged content for secrets via gitleaks (redacted output, no leak in error msg)
+# - Runs typecheck if any TS files are staged
+#
+# Author: Nate Davidovich (Lorecraft LLC)
+
+set -e
+
+# 1. gitleaks scan on staged changes (no-op if gitleaks isn't installed locally)
+if command -v gitleaks >/dev/null 2>&1; then
+  echo "[pre-commit] gitleaks: scanning staged changes…"
+  gitleaks protect --staged --redact --no-banner --config .gitleaks.toml
+else
+  echo "[pre-commit] WARN: gitleaks not installed — skipping secret scan."
+  echo "[pre-commit] Install via 'brew install gitleaks' to enable local secret scanning."
+fi
+
+# 2. Typecheck if any TS files are staged
+STAGED_TS="$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.(ts|tsx)$' || true)"
+if [ -n "$STAGED_TS" ]; then
+  echo "[pre-commit] typecheck: TS files staged — running tsc --noEmit…"
+  npm run typecheck
+fi
+
+echo "[pre-commit] OK"

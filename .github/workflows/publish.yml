@@ -1,0 +1,63 @@
+# OIDC publish doesn't work for our setup — token-auth fallback. See reference_motion_mcp_oidc_vs_token_auth memory.
+# DRAFT — triggers commented out. Nate enables them manually when ready to ship v0.1.0.
+# When enabling, uncomment the `on:` block and add NPM_TOKEN to repo secrets.
+
+name: Publish to npm (token auth)
+
+# on:
+#   release:
+#     types: [published]
+#   workflow_dispatch:
+#     inputs:
+#       dry-run:
+#         description: 'Pack and inspect without publishing'
+#         type: boolean
+#         default: false
+
+# Manual trigger only while DRAFT — prevents accidental publishes.
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type "draft-noop" to confirm this is a no-op dry run'
+        type: string
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    if: ${{ inputs.confirm == 'draft-noop' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Run tests
+        run: npm test
+
+      - name: Publish (dry run — DRAFT mode)
+        run: npm publish --dry-run --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # When enabling for real release, uncomment:
+      # - name: Publish
+      #   run: npm publish --provenance --access public
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

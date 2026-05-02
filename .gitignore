@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+*.tsbuildinfo
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+
+# Private keys and certificates
+*.pem
+*.key
+*.cert
+*.p12
+*.pfx
+credentials.json
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test coverage
+coverage/
+
+# Refero local catalog mirror (cached styles, screenshots, generated DESIGN.md)
+.refero-cache/
+
+# Claude / RuFlo tooling
+.claude-flow/
+.ruflo/
+.claude/
+.mcp.json
+CLAUDE.md
+
+# Editor cruft
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Obsidian vault index note. The parent 2ndBrain vault keeps a
+# `refero-mcp.md` next to this submodule as a project-index note per its
+# filename=folder convention — it's a vault artifact, not part of refero-mcp.
+refero-mcp.md

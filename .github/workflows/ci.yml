@@ -1,0 +1,53 @@
+name: ci
+
+# Mirrors the morgen-mcp / motion-mcp test workflow shape.
+# Runs on every push/PR to main; enforces typecheck + build + test on Node 20 + 22.
+# Permissions: contents:read (least privilege — no write needed for CI).
+# Concurrency: cancel in-flight runs for the same ref to avoid duplicate work.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [20.x, 22.x]
+
+    steps:
+      - name: Checkout
+        # actions/checkout is GitHub-owned (first-party) — major-tag pin per
+        # morgen-mcp / motion-mcp convention. Third-party actions (if added
+        # later) MUST be SHA-pinned with a version comment.
+        uses: actions/checkout@v6
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build
+        run: npm run build
+
+      - name: Run tests
+        run: npm test

@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "refero": {
+      "command": "npx",
+      "args": ["-y", "fidgetcoding-refero-mcp"],
+      "env": {
+        "OPENAI_API_KEY": "sk-...optional, enables vibe search"
+      }
+    }
+  }
+}

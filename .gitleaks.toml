@@ -1,0 +1,28 @@
+# .gitleaks.toml — extends gitleaks default rules
+# Mirrors the panel deployed across Lorecraft repos by the 2026-04-25 fminimax pre-commit hook rollout.
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Redacted-token markers from the 2026-04-25 history scrub"
+regexes = [
+  '''gho_REDACTED-AUDIT-2026-04-25''',
+  '''ntn_REDACTED-AUDIT-2026-04-25''',
+  '''MORGEN-REDACTED-AUDIT-2026-04-25''',
+  '''gho_REDACTED-W2-FIX-OUTPUT''',
+  '''ntn_REDACTED-W2-FIX-OUTPUT''',
+  '''MORGEN-REDACTED-W2-FIX-OUTPUT''',
+]
+
+[[allowlists]]
+description = "Placeholder strings used in templates and examples"
+regexes = [
+  '''REPLACE_WITH_GITHUB_TOKEN''',
+  '''REPLACE_WITH_NOTION_TOKEN''',
+  '''REPLACE_WITH_MORGEN_API_KEY''',
+  '''REPLACE_WITH_OPENAI_API_KEY''',
+  '''REPLACE_WITH_REFERO_API_KEY''',
+  '''\{\{(NOTION_TOKEN|GITHUB_TOKEN|MORGEN_API_KEY|OPENAI_API_KEY|REFERO_API_KEY|NOTION_DATABASE_ID|W[123]_WORKFLOW_ID)\}\}''',
+  '''\$\{?[A-Z_]+_(TOKEN|KEY|SECRET|PASSWORD)\}?''',
+]

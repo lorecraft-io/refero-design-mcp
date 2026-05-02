@@ -1,0 +1,260 @@
+{
+  "styles": [
+    {
+      "id": "031056ff-7af1-46db-8daa-115f731c5d26",
+      "url": "https://elevenlabs.io",
+      "siteName": "ElevenLabs",
+      "screenshotUrl": "https://ysxnuuuj3kqhdyj2.public.blob.vercel-storage.com/1775945461084-screenshot.jpg",
+      "thumbnailUrl": "https://ysxnuuuj3kqhdyj2.public.blob.vercel-storage.com/1775945461084-thumb.jpg",
+      "iconUrl": null,
+      "previewVideoUrl": "https://ysxnuuuj3kqhdyj2.public.blob.vercel-storage.com/031056ff-7af1-46db-8daa-115f731c5d26-1777565093172-preview.mp4",
+      "previewVideoPosterUrl": "https://ysxnuuuj3kqhdyj2.public.blob.vercel-storage.com/031056ff-7af1-46db-8daa-115f731c5d26-1777565093172-preview-poster.jpg",
+      "previewVideoWidth": 1200,
+      "previewVideoHeight": 750,
+      "previewVideoDetailUrl": "https://ysxnuuuj3kqhdyj2.public.blob.vercel-storage.com/031056ff-7af1-46db-8daa-115f731c5d26-1777565093172-preview-detail.mp4",
+      "previewVideoDetailPosterUrl": "https://ysxnuuuj3kqhdyj2.public.blob.vercel-storage.com/031056ff-7af1-46db-8daa-115f731c5d26-1777565093172-preview-detail-poster.jpg",
+      "previewVideoDetailWidth": 1600,
+      "previewVideoDetailHeight": 1000,
+      "previewVideoDurationMs": 26440,
+      "colorScheme": "light",
+      "colors": [
+        {
+          "name": "Eggshell",
+          "hex": "#fdfcfc"
+        },
+        {
+          "name": "Powder",
+          "hex": "#f5f3f1"
+        },
+        {
+          "name": "Chalk",
+          "hex": "#e5e5e5"
+        },
+        {
+          "name": "Fog",
+          "hex": "#b1b0b0"
+        },
+        {
+          "name": "Gravel",
+          "hex": "#777169"
+        },
+        {
+          "name": "Slate",
+          "hex": "#a59f97"
+        }
+      ],
+      "fonts": [
+        "Waldenburg",
+        "WaldenburgFH",
+        "Inter",
+        "Geist Mono"
+      ],
+      "northStar": "Architect's blueprint on warm vellum — Waldenburg weight-300 headlines at 48px with -0.02em tracking anchored against an eggshell ground, pure black pill buttons as the only punctuation.",
+      "createdAt": "2026-04-13 12:58:15"
+    },
+    {
+      "id": "4e3b4717-84c8-4599-baaf-a343c3d619b6",
+      "url": "https://cursor.com",
+      "siteName": "Cursor",
+      "screenshotUrl": "https://ysxnuuuj3kqhdyj2.public.blob.vercel-storage.com/1777419771947-screenshot.jpg",
+      "thumbnailUrl": "https://ysxnuuuj3kqhdyj2.public.blob.vercel-storage.com/1777419771947-thumb.jpg",
+      "iconUrl": null,
+      "previewVideoUrl": "https://ysxnuuuj3kqhdyj2.public.blob.vercel-storage.com/4e3b4717-84c8-4599-baaf-a343c3d619b6-1777551922358-preview.mp4",
+      "previewVideoPosterUrl": "https://ysxnuuuj3kqhdyj2.public.blob.vercel-storage.com/4e3b4717-84c8-4599-baaf-a343c3d619b6-1777551922358-preview-poster.jpg",
+      "previewVideoWidth": 1200,
+      "previewVideoHeight": 750,
+      "previewVideoDetailUrl": "https://ysxnuuuj3kqhdyj2.public.blob.vercel-storage.com/4e3b4717-84c8-4599-baaf-a343c3d619b6-1777551922358-preview-detail.mp4",
+      "previewVideoDetailPosterUrl": "https://ysxnuuuj3kqhdyj2.public.blob.vercel-storage.com/4e3b4717-84c8-4599-baaf-a343c3d619b6-1777551922358-preview-detail-poster.jpg",
+      "previewVideoDetailWidth": 1600,
+      "previewVideoDetailHeight": 1000,
+      "previewVideoDurationMs": 20200,
+      "colorScheme": "light",
+      "colors": [
+        {
+          "name": "Canvas Parchment",
+          "hex": "#f7f7f4"
+        },
+        {
+          "name": "Inkwell",
+          "hex": "#262510"
+        },
+        {
+          "name": "Muted Stone",
+          "hex": "#7a7974"
+        },
+        {
+          "name": "Deep Shadow",
+          "hex": "#141414"
+        },
+        {
+          "name": "Pebble Gray",
+          "hex": "#e6e5e0"
+        },
+        {
+          "name": "Onyx Outline",
+          "hex": "#f54e00"
+        }
+      ],
+      "fonts": [
+        "CursorGothic",
+        "berkeleyMono",
+        "Lato",
+        "EB Garamond",
+        "-apple-system"
+      ],
+      "northStar": "Warm ivory software studio.",
+      "createdAt": "2026-02-24 11:07:28"
+    },
+    {
+      "id": "90ce5883-bb24-4466-93f7-801cd617b0d1",
+      "url": "https://linear.app",
+      "siteName": "Linear",
+      "screenshotUrl": "https://ysxnuuuj3kqhdyj2.public.blob.vercel-storage.com/1777421130497-screenshot.jpg",
+      "thumbnailUrl": "https://ysxnuuuj3kqhdyj2.public.blob.vercel-storage.com/1777421130497-thumb.jpg",
+      "iconUrl": null,
+      "previewVideoUrl": "https://ysxnuuuj3kqhdyj2.public.blob.vercel-storage.com/90ce5883-bb24-4466-93f7-801cd617b0d1-1777555512457-preview.mp4",
+      "previewVideoPosterUrl": "https://ysxnuuuj3kqhdyj2.public.blob.vercel-storage.com/90ce5883-bb24-4466-93f7-801cd617b0d1-1777555512457-preview-poster.jpg",
+      "previewVideoWidth": 1200,
+      "previewVideoHeight": 750,
+      "previewVideoDetailUrl": "https://ysxnuuuj3kqhdyj2.public.blob.vercel-storage.com/90ce5883-bb24-4466-93f7-801cd617b0d1-1777555512457-preview-detail.mp4",
+      "previewVideoDetailPosterUrl": "https://ysxnuuuj3kqhdyj2.public.blob.vercel-storage.com/90ce5883-bb24-4466-93f7-801cd617b0d1-1777555512457-preview-detail-poster.jpg",
+      "previewVideoDetailWidth": 1600,
+      "previewVideoDetailHeight": 1000,
+      "previewVideoDurationMs": 26960,
+      "colorScheme": "dark",
+      "colors": [
+        {
+          "name": "Pitch Black",
+          "hex": "#08090a"
+        },
+        {
+          "name": "Graphite",
+          "hex": "#0f1011"
+        },
+        {
+          "name": "Deep Slate",
+          "hex": "#161718"
+        },
+        {
+          "name": "Charcoal Grey",
+          "hex": "#23252a"
+        },
+        {
+          "name": "Muted Ash",
+          "hex": "#323334"
+        },
+        {
+          "name": "Gunmetal",
+          "hex": "#383b3f"
+        }
+      ],
+      "fonts": [
+        "Inter Variable",
+        "Berkeley Mono"
+      ],
+      "northStar": "Midnight Command Center: A dark, layered interface lit by precise accents, like a high-tech control panel.",
+      "createdAt": "2026-02-27 14:14:42"
+    },
+    {
+      "id": "3172cd4d-118a-4a16-a259-6b634d32322e",
+      "url": "https://mercury.com",
+      "siteName": "Mercury",
+      "screenshotUrl": "https://ysxnuuuj3kqhdyj2.public.blob.vercel-storage.com/1775929449693-screenshot.jpg",
+      "thumbnailUrl": "https://ysxnuuuj3kqhdyj2.public.blob.vercel-storage.com/1775929449693-thumb.jpg",
+      "iconUrl": null,
+      "previewVideoUrl": "https://ysxnuuuj3kqhdyj2.public.blob.vercel-storage.com/3172cd4d-118a-4a16-a259-6b634d32322e-1777556598107-preview.mp4",
+      "previewVideoPosterUrl": "https://ysxnuuuj3kqhdyj2.public.blob.vercel-storage.com/3172cd4d-118a-4a16-a259-6b634d32322e-1777556598107-preview-poster.jpg",
+      "previewVideoWidth": 1200,
+      "previewVideoHeight": 750,
+      "previewVideoDetailUrl": "https://ysxnuuuj3kqhdyj2.public.blob.vercel-storage.com/3172cd4d-118a-4a16-a259-6b634d32322e-1777556598107-preview-detail.mp4",
+      "previewVideoDetailPosterUrl": "https://ysxnuuuj3kqhdyj2.public.blob.vercel-storage.com/3172cd4d-118a-4a16-a259-6b634d32322e-1777556598107-preview-detail-poster.jpg",
+      "previewVideoDetailWidth": 1600,
+      "previewVideoDetailHeight": 1000,
+      "previewVideoDurationMs": 26800,
+      "colorScheme": "dark",
+      "colors": [
+        {
+          "name": "Mercury Blue",
+          "hex": "#5266eb"
+        },
+        {
+          "name": "Ghost Blue",
+          "hex": "#cdddff"
+        },
+        {
+          "name": "Deep Space",
+          "hex": "#171721"
+        },
+        {
+          "name": "Midnight Slate",
+          "hex": "#1e1e2a"
+        },
+        {
+          "name": "Graphite",
+          "hex": "#272735"
+        },
+        {
+          "name": "Lead",
+          "hex": "#70707d"
+        }
+      ],
+      "fonts": [
+        "arcadiaDisplay",
+        "arcadia"
+      ],
+      "northStar": "Mountain Top Command Center",
+      "createdAt": "2026-02-25 13:19:15"
+    },
+    {
+      "id": "48e5de76-05d5-4c4e-a269-c7c245b291ec",
+      "url": "https://stripe.com",
+      "siteName": "Stripe",
+      "screenshotUrl": "https://ysxnuuuj3kqhdyj2.public.blob.vercel-storage.com/1777503329317-screenshot.jpg",
+      "thumbnailUrl": "https://ysxnuuuj3kqhdyj2.public.blob.vercel-storage.com/1777503329317-thumb.jpg",
+      "iconUrl": null,
+      "previewVideoUrl": "https://ysxnuuuj3kqhdyj2.public.blob.vercel-storage.com/48e5de76-05d5-4c4e-a269-c7c245b291ec-1777554447238-preview.mp4",
+      "previewVideoPosterUrl": "https://ysxnuuuj3kqhdyj2.public.blob.vercel-storage.com/48e5de76-05d5-4c4e-a269-c7c245b291ec-1777554447238-preview-poster.jpg",
+      "previewVideoWidth": 1200,
+      "previewVideoHeight": 750,
+      "previewVideoDetailUrl": "https://ysxnuuuj3kqhdyj2.public.blob.vercel-storage.com/48e5de76-05d5-4c4e-a269-c7c245b291ec-1777554447238-preview-detail.mp4",
+      "previewVideoDetailPosterUrl": "https://ysxnuuuj3kqhdyj2.public.blob.vercel-storage.com/48e5de76-05d5-4c4e-a269-c7c245b291ec-1777554447238-preview-detail-poster.jpg",
+      "previewVideoDetailWidth": 1600,
+      "previewVideoDetailHeight": 1000,
+      "previewVideoDurationMs": 31280,
+      "colorScheme": "light",
+      "colors": [
+        {
+          "name": "Midnight Ink",
+          "hex": "#061b31"
+        },
+        {
+          "name": "Slate Blue",
+          "hex": "#50617a"
+        },
+        {
+          "name": "Ghost Gray",
+          "hex": "#64748d"
+        },
+        {
+          "name": "Platinum White",
+          "hex": "#ffffff"
+        },
+        {
+          "name": "Porcelain White",
+          "hex": "#f8fafd"
+        },
+        {
+          "name": "Powder Blue",
+          "hex": "#e5edf5"
+        }
+      ],
+      "fonts": [
+        "sohne-var"
+      ],
+      "northStar": "Architectural blueprint on white marble.",
+      "createdAt": "2026-02-19 11:14:39"
+    }
+  ],
+  "nextCursor": null,
+  "nextPage": 2
+}
