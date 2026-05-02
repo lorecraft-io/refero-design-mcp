@@ -32,6 +32,9 @@ export class PathSafetyError extends Error {
 function vaultRoot(): string {
   const cfg = loadConfig();
   if (cfg.vaultDir === null) {
+    // No default vault. The previous draft hardcoded the author's
+    // laptop path, which worked great for exactly one machine on Earth.
+    // Throwing is rude but correct.
     throw new PathSafetyError(
       "save_to_project: REFERO_MCP_VAULT_DIR is not set; cannot resolve vault root",
     );
