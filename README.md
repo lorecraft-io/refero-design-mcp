@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/lorecraft-io/refero-mcp/main/.github/banner.png" alt="refero-mcp" width="100%" />
+<img src="https://raw.githubusercontent.com/lorecraft-io/refero-design-mcp/main/.github/banner.png" alt="refero-mcp" width="100%" />
 
 # Refero MCP
 
