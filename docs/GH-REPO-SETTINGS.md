@@ -1,6 +1,6 @@
 # GH-REPO-SETTINGS
 
-GitHub repo settings for `lorecraft-io/refero-mcp`. Pipeline Executor (#2) runs the `gh repo edit` block below verbatim after `gh repo create`. Everything in the UI checklist is verified by hand once the repo is live.
+GitHub repo settings for `fidgetcoding/refero-design-mcp`. Pipeline Executor (#2) runs the `gh repo edit` block below verbatim after `gh repo create`. Everything in the UI checklist is verified by hand once the repo is live.
 
 Owner: Nate Davidovich / Lorecraft. Visibility: public. License: MIT.
 
@@ -48,7 +48,7 @@ Eight topics, lowercase, hyphenated:
 Copy-paste, no edits. Run from anywhere — `gh repo edit` takes the `OWNER/REPO` arg, no `cd` needed.
 
 ```bash
-gh repo edit lorecraft-io/refero-mcp \
+gh repo edit fidgetcoding/refero-design-mcp \
   --description "MCP server that pipes the refero.design system into Claude — agentic design tokens, components, MD." \
   --homepage "https://styles.refero.design" \
   --visibility public \
@@ -71,7 +71,7 @@ If the description em-dash (`—`, U+2014) gets mangled by a copy-paste through 
 ### Sanity check (run after the edit)
 
 ```bash
-gh repo view lorecraft-io/refero-mcp --json description,homepageUrl,visibility,hasIssuesEnabled,hasDiscussionsEnabled,hasProjectsEnabled,hasWikiEnabled,repositoryTopics,licenseInfo
+gh repo view fidgetcoding/refero-design-mcp --json description,homepageUrl,visibility,hasIssuesEnabled,hasDiscussionsEnabled,hasProjectsEnabled,hasWikiEnabled,repositoryTopics,licenseInfo
 ```
 
 Expected JSON shape (values, not field order):
@@ -107,7 +107,7 @@ If `licenseInfo` is `null`, jump to §6 below — the LICENSE file isn't being r
 
 ## 5. UI verifications (checklist)
 
-Open `https://github.com/lorecraft-io/refero-mcp/settings` and walk it top-to-bottom. The CLI covers most of this, but a few things only live in the UI.
+Open `https://github.com/fidgetcoding/refero-design-mcp/settings` and walk it top-to-bottom. The CLI covers most of this, but a few things only live in the UI.
 
 ### General
 
@@ -169,8 +169,8 @@ GitHub auto-detects the license by reading the LICENSE file at the repo root and
 
 After `git push` lands the LICENSE file:
 
-- [ ] The repo header on `https://github.com/lorecraft-io/refero-mcp` shows an `MIT license` chip next to the description
-- [ ] `gh repo view lorecraft-io/refero-mcp --json licenseInfo` returns `{ "licenseInfo": { "key": "mit", "name": "MIT License" } }` (not `null`)
+- [ ] The repo header on `https://github.com/fidgetcoding/refero-design-mcp` shows an `MIT license` chip next to the description
+- [ ] `gh repo view fidgetcoding/refero-design-mcp --json licenseInfo` returns `{ "licenseInfo": { "key": "mit", "name": "MIT License" } }` (not `null`)
 - [ ] Settings → General → License shows `MIT License` (read-only, sourced from the file)
 
 If the chip doesn't appear within ~60 seconds of the first push:

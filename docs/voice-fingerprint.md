@@ -97,7 +97,7 @@ claude mcp add fidgetflo -- npx -y fidgetflo@latest
 - `claude mcp add <short-name>` — short-name is one word, lowercase, no `-mcp` suffix.
 - `--env KEY=value` inline only when there's a single required secret simple enough to paste at install time. Multi-credential setups (motion-mcp's Firebase tokens) get a separate `## Configuration` section with a JSON config block.
 - Always `-- npx -y <package-name>`. The `-y` is non-negotiable.
-- Package name uses the `fidgetcoding-` npm prefix (`fidgetcoding-morgen-mcp`, `fidgetcoding-motion-mcp`) — see `[[project_fidgetcoding_npm_naming]]` memory. GitHub repo names DROP the prefix (`lorecraft-io/morgen-mcp`).
+- Package name uses the `fidgetcoding-` npm prefix (`fidgetcoding-morgen-mcp`, `fidgetcoding-motion-mcp`) — see `[[project_fidgetcoding_npm_naming]]` memory. GitHub repo names DROP the prefix (`fidgetcoding/morgen-mcp`).
 - A "Then restart Claude Code and start talking to your calendar." closer is normal. One sentence, present-tense, second-person.
 
 **Two install paths when applicable:**
@@ -227,7 +227,7 @@ Built by **Nate Davidovich** / [Lorecraft](https://github.com/lorecraft-io).
 
 **Hero block:** `<div align="center">` containing project name as `# Heading`, hero image `![Name](url)`, a one-line tagline in bold, then the badge row, then close `</div>`. Then `---`. Then the Quick Navigation table.
 
-**Hero image:** PNG hosted at `https://raw.githubusercontent.com/lorecraft-io/<repo>/main/<repo>.png`. The file exists in the repo root.
+**Hero image:** PNG hosted at `https://raw.githubusercontent.com/fidgetcoding/<repo>/main/<repo>.png`. The file exists in the repo root.
 
 **Security: gitleaks pre-commit hook** section appears at the very bottom of all three READMEs, after License/Author. Same boilerplate every time — copy-paste it from morgen-mcp's README into refero-mcp's.
 

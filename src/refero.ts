@@ -16,7 +16,7 @@ import {
   type StylesListResponse,
 } from "./types.js";
 
-const USER_AGENT = "refero-mcp/0.1.0 (+https://github.com/lorecraft-io/refero-mcp)";
+const USER_AGENT = "refero-mcp/0.1.0 (+https://github.com/fidgetcoding/refero-design-mcp)";
 const REQUEST_TIMEOUT_MS = 10_000;
 const MAX_ATTEMPTS = 3;
 const BACKOFF_MS = [1_000, 2_000, 4_000] as const;
