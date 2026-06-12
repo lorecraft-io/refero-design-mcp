@@ -146,8 +146,8 @@ When to refresh:
 
 This MCP doesn't render anything itself. It produces a DESIGN.md that the rest of your toolchain knows how to consume. Two specific pairings:
 
-- **[`/stitch-design-taste`](https://github.com/lorecraft-io/2ndBrain-mogging) — Google Stitch + DESIGN.md.** Generate a DESIGN.md with `save_to_project`, then have `/stitch-design-taste` validate it against the agent-friendly schema and feed it into Stitch for component generation.
-- **[`/design-taste-frontend`](https://github.com/lorecraft-io/2ndBrain-mogging) — building the actual UI.** Run `save_to_project` first so DESIGN.md is on disk in the project root. The skill picks it up automatically and overrides default LLM design biases with the role-tagged colors and `dos` / `donts` from Refero.
+- **[`/stitch-design-taste`](https://github.com/fidgetcoding/2ndBrain-mogging) — Google Stitch + DESIGN.md.** Generate a DESIGN.md with `save_to_project`, then have `/stitch-design-taste` validate it against the agent-friendly schema and feed it into Stitch for component generation.
+- **[`/design-taste-frontend`](https://github.com/fidgetcoding/2ndBrain-mogging) — building the actual UI.** Run `save_to_project` first so DESIGN.md is on disk in the project root. The skill picks it up automatically and overrides default LLM design biases with the role-tagged colors and `dos` / `donts` from Refero.
 
 Together, the loop is: **search Refero → save DESIGN.md → /stitch-design-taste validates → /design-taste-frontend ships components.** No copy-paste, no taste-by-vibe-only, no defaulting to slate-blue and Inter for the eighth time this month.
 

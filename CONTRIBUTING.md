@@ -7,7 +7,7 @@ Short version: this is a small MCP server that wraps a beta third-party catalog.
 ## Run it locally
 
 ```bash
-git clone https://github.com/lorecraft-io/refero-design-mcp.git
+git clone https://github.com/fidgetcoding/refero-design-mcp.git
 cd refero-design-mcp
 npm install
 npm run build

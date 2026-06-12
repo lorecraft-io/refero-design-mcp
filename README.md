@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/lorecraft-io/refero-design-mcp/main/.github/banner.png" alt="refero-mcp" width="100%" />
+<img src="https://raw.githubusercontent.com/fidgetcoding/refero-design-mcp/main/.github/banner.png" alt="refero-mcp" width="100%" />
 
 # Refero MCP
 
@@ -169,7 +169,7 @@ There is no public Refero API doc as of writing — the shape was mapped empiric
 
 - **Local catalog mirror.** Refero exposes `?page=N` pagination but silently ignores `?search=`, `?q=`, and `?colorScheme=`. So this MCP walks the pages once, mirrors them locally under `REFERO_CACHE_DIR`, and runs all filtering and ranking client-side.
 - **Vibe search via `northStar`.** Every Refero style ships with a one-line poetic summary called `northStar`. With `OPENAI_API_KEY` set, the MCP embeds those summaries with `text-embedding-3-small` and ranks by cosine similarity to your query. Without a key, it falls back to keyword scoring on `northStar` + tags + site name.
-- **DESIGN.md generated locally.** Refero does not expose a `/design.md` endpoint. The MCP synthesizes one from `style.fullResult.designSystem` (dos, donts, tags, theme, role-tagged colors). Output is compatible with the [`/stitch-design-taste`](https://github.com/lorecraft-io/2ndBrain-mogging) and `/design-taste-frontend` skills.
+- **DESIGN.md generated locally.** Refero does not expose a `/design.md` endpoint. The MCP synthesizes one from `style.fullResult.designSystem` (dos, donts, tags, theme, role-tagged colors). Output is compatible with the [`/stitch-design-taste`](https://github.com/fidgetcoding/2ndBrain-mogging) and `/design-taste-frontend` skills.
 
 <p align="right"><a href="#top">↑ back to top</a></p>
 
@@ -197,7 +197,7 @@ Built by **Nate Davidovich** / [Lorecraft LLC](https://github.com/lorecraft-io).
 
 - GitHub: [lorecraft-io](https://github.com/lorecraft-io)
 - npm: [lorecraft](https://www.npmjs.com/~lorecraft)
-- Sister projects: [morgen-mcp](https://github.com/lorecraft-io/morgen-mcp), [motion-mcp](https://github.com/lorecraft-io/motion-mcp)
+- Sister projects: [morgen-mcp](https://github.com/fidgetcoding/morgen-mcp), [motion-mcp](https://github.com/fidgetcoding/motion-mcp)
 
 [⤴ back to top](#top)
 

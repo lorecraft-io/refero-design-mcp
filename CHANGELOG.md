@@ -29,4 +29,4 @@ Initial release. Wraps the (undocumented) `styles.refero.design` API and exposes
 - Server-side filters (`?search=`, `?q=`, `?colorScheme=`) are silently ignored by Refero — the MCP filters and ranks client-side against the local mirror.
 - Rate limits are unobserved; the MCP self-imposes a 250ms inter-page delay during catalog refreshes as a politeness floor.
 
-[0.1.0]: https://github.com/lorecraft-io/refero-design-mcp/releases/tag/v0.1.0
+[0.1.0]: https://github.com/fidgetcoding/refero-design-mcp/releases/tag/v0.1.0

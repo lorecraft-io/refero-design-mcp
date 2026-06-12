@@ -38,10 +38,10 @@
   ],
   "author": "Nate Davidovich <nate@lorecraft.io> (Lorecraft LLC)",
   "license": "MIT",
-  "repository": "github:lorecraft-io/refero-design-mcp",
-  "homepage": "https://github.com/lorecraft-io/refero-design-mcp",
+  "repository": "github:fidgetcoding/refero-design-mcp",
+  "homepage": "https://github.com/fidgetcoding/refero-design-mcp",
   "bugs": {
-    "url": "https://github.com/lorecraft-io/refero-design-mcp/issues"
+    "url": "https://github.com/fidgetcoding/refero-design-mcp/issues"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0"
