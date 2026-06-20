@@ -32,7 +32,7 @@ jobs:
         # actions/checkout is GitHub-owned (first-party) — major-tag pin per
         # morgen-mcp / motion-mcp convention. Third-party actions (if added
         # later) MUST be SHA-pinned with a version comment.
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v6
