@@ -4,6 +4,20 @@ All notable changes to `fidgetcoding-refero-mcp` are documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- **`refero_facets`** — catalog vocabulary discovery. Returns ranked font stacks, named colors, and theme counts over the cached catalog, optionally scoped to one theme. Exists because the list projection carries no tag taxonomy, so an agent reaching for `tags` is guessing at words that may appear nowhere; every value this returns is already covered by `searchText`, so it round-trips into `refero_search` as a query. Pure computation over the existing cache — no new network surface. 17 new tests.
+
+### Security
+
+- npm advisories reduced from 12 (6 high / 4 moderate / 2 low) to 1 via a transitive-dependency refresh. The remaining item is a **low**, dev-only `esbuild` advisory (arbitrary file read while running esbuild's dev server on Windows) reachable only through vitest. Clearing it requires a breaking major bump of the test toolchain to fix a Windows dev-server issue on a macOS-developed, stdio-only package — deliberately left in place.
+
+### Known issues
+
+- `SERVER_VERSION` in `src/server.ts` is hard-coded to `0.1.0` rather than read from `package.json`, so it will drift on the next release. Same class of bug already fixed in motion-mcp; not fixed here yet because resolving `package.json` differs between `dist/` and the vitest `src/` run.
+
 ## [0.1.0] — 2026-05-01
 
 Initial release. Wraps the (undocumented) `styles.refero.design` API and exposes it to Claude Code as an MCP server.

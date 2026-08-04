@@ -136,6 +136,7 @@ More worked recipes in [`docs/USAGE.md`](docs/USAGE.md).
 | `refero_get` | Fetch the full design system for one style. Accepts a uuid, hostname (e.g. `cursor.com`), or site name (e.g. `"Cursor"`). |
 | `refero_similar` | Refero's own "similar styles" ranking for a given style. Free recommendations from the upstream. |
 | `refero_list` | Browse the local catalog mirror with optional theme/tag filters. Stably ordered. |
+| `refero_facets` | What's actually in the catalog — ranked font stacks, color names, theme counts. Call it before guessing search terms: there is no tag taxonomy, so invented tags match nothing, but every value this returns is already in the search index and can be passed straight to `refero_search`. |
 | `refero_design_md` | Render a style as an agent-friendly DESIGN.md (frontmatter, north star, color table, dos/donts). Optionally writes to disk. |
 | `refero_refresh` | Force a full re-fetch of the catalog and overwrite the local mirror. Skips the 24h TTL. |
 

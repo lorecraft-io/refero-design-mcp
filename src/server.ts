@@ -1,7 +1,7 @@
 /**
  * MCP server factory.
  *
- * Registers six tools and wires them to the handlers under `./tools/`. Mirrors
+ * Registers seven tools and wires them to the handlers under `./tools/`. Mirrors
  * the morgen-mcp / motion-mcp request-handler pattern: a single
  * `CallToolRequestSchema` switch, all tool input is unknown until the
  * handler has validated it, and errors are sanitized before being returned.
@@ -21,6 +21,7 @@ import { handleDesignMd } from "./tools/design-md.js";
 import { handleSimilar } from "./tools/similar.js";
 import { handleList } from "./tools/list.js";
 import { handleRefresh } from "./tools/refresh.js";
+import { handleFacets } from "./tools/facets.js";
 
 const SERVER_NAME = "refero";
 const SERVER_VERSION = "0.1.0";
@@ -142,6 +143,26 @@ const TOOLS: Tool[] = [
     },
   },
   {
+    name: "refero_facets",
+    description:
+      "Discover what the catalog actually contains: ranked font stacks, color names, and theme counts. Call this BEFORE guessing search terms — the catalog has no tag taxonomy, so invented tags match nothing, while any font or color returned here can be passed straight to refero_search as a query.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        theme: {
+          type: "string",
+          enum: ["light", "dark"],
+          description: "Restrict the facet counts to light- or dark-themed sites.",
+        },
+        limit: {
+          type: "number",
+          description: "How many font and color values to return (default 25, max 100).",
+        },
+      },
+      additionalProperties: false,
+    },
+  },
+  {
     name: "refero_refresh",
     description:
       "Force a full re-fetch of the styles.refero.design catalog and overwrite the local mirror. Useful after the catalog has changed and you don't want to wait for the 24h TTL.",
@@ -169,6 +190,8 @@ async function dispatch(name: string, args: Args): Promise<unknown> {
       return handleSimilar(a);
     case "refero_list":
       return handleList(a);
+    case "refero_facets":
+      return handleFacets(a);
     case "refero_refresh":
       return handleRefresh(a);
     default:
