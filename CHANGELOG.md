@@ -4,7 +4,7 @@ All notable changes to `fidgetcoding-refero-mcp` are documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.2.0] — 2026-08-04
 
 ### Added
 
@@ -14,9 +14,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 - npm advisories reduced from 12 (6 high / 4 moderate / 2 low) to 1 via a transitive-dependency refresh. The remaining item is a **low**, dev-only `esbuild` advisory (arbitrary file read while running esbuild's dev server on Windows) reachable only through vitest. Clearing it requires a breaking major bump of the test toolchain to fix a Windows dev-server issue on a macOS-developed, stdio-only package — deliberately left in place.
 
-### Known issues
+### Fixed
 
-- `SERVER_VERSION` in `src/server.ts` is hard-coded to `0.1.0` rather than read from `package.json`, so it will drift on the next release. Same class of bug already fixed in motion-mcp; not fixed here yet because resolving `package.json` differs between `dist/` and the vitest `src/` run.
+- `SERVER_VERSION` was hard-coded to `0.1.0` in `src/server.ts`, so the `initialize` handshake would have kept reporting 0.1.0 after every subsequent release. Now read from `package.json`. `tsc` emits `src/server.ts` to `dist/server.js`, so `../package.json` resolves to the repo root from both the published package and the vitest run of `src/`. Guarded by a test asserting `SERVER_INFO.version` equals the manifest version.
+- Publish workflow was a DRAFT that only ever ran `npm publish --dry-run` behind a `confirm: "draft-noop"` gate — it could never ship a release, and 0.1.0 went out by hand. Replaced with the OIDC + provenance workflow used by motion-mcp and morgen-mcp, triggered on `v*` tags. The comment claiming "OIDC publish doesn't work for our setup" was wrong; the original blocker was a trusted-publisher record bound to the wrong repository.
 
 ## [0.1.0] — 2026-05-01
 

@@ -1,6 +1,6 @@
 {
   "name": "fidgetcoding-refero-mcp",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Bullet-proof MCP for styles.refero.design — natural-language search across the curated DESIGN.md library.",
   "type": "module",
   "bin": {

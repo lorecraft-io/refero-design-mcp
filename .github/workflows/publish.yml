@@ -1,34 +1,31 @@
-# OIDC publish doesn't work for our setup — token-auth fallback. See reference_motion_mcp_oidc_vs_token_auth memory.
-# DRAFT — triggers commented out. Nate enables them manually when ready to ship v0.1.0.
-# When enabling, uncomment the `on:` block and add NPM_TOKEN to repo secrets.
+name: Publish to npm (OIDC + provenance)
 
-name: Publish to npm (token auth)
+# Was a DRAFT no-op that only ever ran `npm publish --dry-run`, on the belief
+# that OIDC trusted publishing didn't work for these packages. It does — the
+# original blocker was a trusted-publisher record bound to the wrong repo, not
+# anything about the flow. motion-mcp and morgen-mcp both publish this way.
+#
+# Requires a trusted publisher on npmjs.com for fidgetcoding-refero-mcp:
+#   Settings → Trusted Publisher → GitHub Actions
+#   org `fidgetcoding` / repo `refero-design-mcp` / workflow `publish.yml`
+#   Environment: blank. Allowed actions: npm publish.
 
-# on:
-#   release:
-#     types: [published]
-#   workflow_dispatch:
-#     inputs:
-#       dry-run:
-#         description: 'Pack and inspect without publishing'
-#         type: boolean
-#         default: false
-
-# Manual trigger only while DRAFT — prevents accidental publishes.
 on:
+  push:
+    tags: ['v*']
   workflow_dispatch:
     inputs:
-      confirm:
-        description: 'Type "draft-noop" to confirm this is a no-op dry run'
-        type: string
-        required: true
+      dry-run:
+        description: 'Pack and inspect without publishing'
+        type: boolean
+        default: false
 
 permissions:
   contents: read
+  id-token: write
 
 jobs:
   publish:
-    if: ${{ inputs.confirm == 'draft-noop' }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -42,6 +39,14 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           cache: npm
 
+      # npm@latest is 12.x and requires Node >=22.22.2; Node stays pinned at 20
+      # so tests run on the engines floor, so pin npm to the 11.x line — the
+      # oldest npm with OIDC trusted-publisher support.
+      - name: Upgrade npm to 11.x (required for OIDC trusted-publisher auth)
+        run: |
+          npm install -g npm@^11
+          npm --version
+
       - name: Install dependencies
         run: npm ci
 
@@ -51,13 +56,12 @@ jobs:
       - name: Run tests
         run: npm test
 
-      - name: Publish (dry run — DRAFT mode)
-        run: npm publish --dry-run --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish (dry run)
+        if: ${{ inputs.dry-run }}
+        run: npm publish --dry-run --provenance --access public
 
-      # When enabling for real release, uncomment:
-      # - name: Publish
-      #   run: npm publish --provenance --access public
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish
+        if: ${{ !inputs.dry-run }}
+        run: npm publish --provenance --access public
+        env:
+          NPM_CONFIG_PROVENANCE: true

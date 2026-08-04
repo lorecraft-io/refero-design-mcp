@@ -8,6 +8,10 @@
  *
  * Author: Nate Davidovich (Lorecraft LLC)
  */
+import { readFileSync } from "node:fs";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import {
   CallToolRequestSchema,
@@ -24,7 +28,16 @@ import { handleRefresh } from "./tools/refresh.js";
 import { handleFacets } from "./tools/facets.js";
 
 const SERVER_NAME = "refero";
-const SERVER_VERSION = "0.1.0";
+
+// Read the version from package.json rather than restating it here — a
+// hand-typed constant silently keeps reporting the old number after every
+// release, so `initialize` ends up lying about what's actually running.
+// `tsc` emits src/server.ts to dist/server.js, so ../package.json resolves to
+// the repo root from both the built package and the vitest run of src/.
+const PKG = JSON.parse(
+  readFileSync(resolve(dirname(fileURLToPath(import.meta.url)), "../package.json"), "utf8"),
+) as { version: string };
+const SERVER_VERSION = PKG.version;
 
 const TOOLS: Tool[] = [
   {
