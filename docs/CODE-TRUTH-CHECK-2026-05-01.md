@@ -43,7 +43,7 @@ Spot-check of args claimed or implied by the README against the schemas in `src/
 | `get_style` accepts a name like "Linear" | `refero_get.identifier` required string; resolver supports uuid / hostname / fuzzy site name with Levenshtein ≤ 2 (`server.ts:60–73`, `tools/get.ts:24–45`, `resolver.ts`) | OK in spirit, wrong tool name |
 | `list_similar` accepts e.g. "Vercel" | `refero_similar.identifier` required string + optional `limit` (default 10, max 20) (`server.ts:96–113`, `tools/similar.ts:44–69`) | OK in spirit, wrong tool name |
 | `get_design_md` "don't save it yet" | `refero_design_md.identifier` required + optional `save_to_project` (`server.ts:75–93`, `tools/design-md.ts:40–70`) — when `save_to_project` is omitted/empty, the handler returns markdown with no `savedTo` (`tools/design-md.ts:47–54`) | Behavior matches; tool name wrong |
-| `save_to_project` "Save Cursor's DESIGN.md into my PARZVL project" | Implemented as `refero_design_md({ identifier: "Cursor", save_to_project: "PARZVL" })`. Sanitization at `src/path-safety.ts:46–91` only allows `[A-Za-z0-9_.-]` (matches the README's `Configuration` table description) | Behavior matches; presented as a separate tool when it is actually a parameter |
+| `save_to_project` "Save Cursor's DESIGN.md into my ACME project" | Implemented as `refero_design_md({ identifier: "Cursor", save_to_project: "ACME" })`. Sanitization at `src/path-safety.ts:46–91` only allows `[A-Za-z0-9_.-]` (matches the README's `Configuration` table description) | Behavior matches; presented as a separate tool when it is actually a parameter |
 | `refresh_catalog` | `refero_refresh` takes no args (`server.ts:144–153`, `tools/refresh.ts:17–26`) | OK in spirit, wrong tool name |
 
 No tool args are *misdescribed*; the README just consistently uses fictional tool names.
@@ -85,7 +85,7 @@ One soft mismatch: README footnote on `REFERO_MCP_VAULT_DIR` says *"If unset, `r
 | *"Pull the full breakdown for the Linear style."* | YES. `refero_get({ identifier: "Linear" })` — fuzzy resolver in `src/resolver.ts` matches site names within Levenshtein 2 (per server description). |
 | *"What's similar to Vercel in the Refero catalog?"* | YES. `refero_similar({ identifier: "Vercel" })` — `tools/similar.ts:44–69` calls `getById` server-side and returns its `similar[]` bucket. |
 | *"Give me the DESIGN.md for that one — don't save it yet."* | YES. `refero_design_md({ identifier: ... })` with `save_to_project` omitted returns markdown with no `savedTo` field (`tools/design-md.ts:47–54`). |
-| *"Save Cursor's DESIGN.md into my PARZVL project."* | YES (when `REFERO_MCP_VAULT_DIR` is set). `refero_design_md({ identifier: "Cursor", save_to_project: "PARZVL" })` writes to `<vault>/05-Projects/PARZVL/DESIGN.md` via `path-safety.ts:46–91`. |
+| *"Save Cursor's DESIGN.md into my ACME project."* | YES (when `REFERO_MCP_VAULT_DIR` is set). `refero_design_md({ identifier: "Cursor", save_to_project: "ACME" })` writes to `<vault>/05-Projects/ACME/DESIGN.md` via `path-safety.ts:46–91`. |
 | *"Refresh the Refero catalog before we start the design pass."* | YES. `refero_refresh` walks pages with a 250 ms gap (`tools/shared.ts:54`, `tools/refresh.ts:17–26`). README's "polite 250ms gap" claim matches the constant. |
 | README §How-it-works claim: "ranks by cosine similarity to your query" using `text-embedding-3-small` | YES. See `src/embeddings.ts` (referenced in `tools/search.ts:6`); confirmed model name `text-embedding-3-small` is the README claim. *Not* re-verified line-by-line in this pass — embeddings.ts was not opened — but the scorer plumbing in `tools/search.ts:98–117` calls `getScorer().score(query, items)` and returns `scorer.name` of `"openai" | "keyword"`, matching the README's "vibe vs keyword" framing. |
 
@@ -143,7 +143,7 @@ All NL examples in the README are implementable. The only thing they don't tell 
    | `refero_get` | *"Pull the full breakdown for the Linear style."* |
    | `refero_similar` | *"What's similar to Vercel in the Refero catalog?"* |
    | `refero_list` | *"Browse the catalog — page 2, dark only, 20 per page."* |
-   | `refero_design_md` | *"Give me the DESIGN.md for Cursor — don't save it yet."* / *"…and save it into my PARZVL project."* |
+   | `refero_design_md` | *"Give me the DESIGN.md for Cursor — don't save it yet."* / *"…and save it into my ACME project."* |
    | `refero_refresh` | *"Refresh the Refero catalog before we start the design pass."* |
    ```
 

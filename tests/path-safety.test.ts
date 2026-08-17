@@ -20,7 +20,7 @@
  *   6. Names beginning with "." (dotfile escape).
  *
  * Trailing-whitespace handling: implementation TRIMS first then validates.
- * `"PARZVL "` → "PARZVL" (allowed). All-whitespace → empty → rejected.
+ * `"ACME "` → "ACME" (allowed). All-whitespace → empty → rejected.
  *
  * Symlink semantics: resolveProjectDir is a pure path-join + lexical
  * resolve(). It does NOT call fs.realpath, so a symlink at
@@ -47,7 +47,7 @@ const ORIGINAL_ENV = { ...process.env };
 beforeEach(() => {
   vaultRoot = fs.mkdtempSync(path.join(os.tmpdir(), "refero-mcp-vault-"));
   fs.mkdirSync(path.join(vaultRoot, "05-Projects"), { recursive: true });
-  fs.mkdirSync(path.join(vaultRoot, "05-Projects", "PARZVL"), {
+  fs.mkdirSync(path.join(vaultRoot, "05-Projects", "ACME"), {
     recursive: true,
   });
 
@@ -65,17 +65,17 @@ afterEach(() => {
 });
 
 describe("resolveProjectDir — happy path", () => {
-  it("resolves PARZVL to <vault>/05-Projects/PARZVL/", () => {
-    const got = resolveProjectDir("PARZVL");
-    expect(got).toBe(path.join(vaultRoot, "05-Projects", "PARZVL"));
+  it("resolves ACME to <vault>/05-Projects/ACME/", () => {
+    const got = resolveProjectDir("ACME");
+    expect(got).toBe(path.join(vaultRoot, "05-Projects", "ACME"));
   });
 
   it("resolves a project name with hyphens and digits", () => {
-    fs.mkdirSync(path.join(vaultRoot, "05-Projects", "BLOOM-HQ"), {
+    fs.mkdirSync(path.join(vaultRoot, "05-Projects", "WIDGETS-HQ"), {
       recursive: true,
     });
-    const got = resolveProjectDir("BLOOM-HQ");
-    expect(got).toBe(path.join(vaultRoot, "05-Projects", "BLOOM-HQ"));
+    const got = resolveProjectDir("WIDGETS-HQ");
+    expect(got).toBe(path.join(vaultRoot, "05-Projects", "WIDGETS-HQ"));
   });
 
   it("resolves names containing underscores", () => {
@@ -105,11 +105,11 @@ describe("resolveProjectDir — traversal rejection", () => {
   });
 
   it("throws on a forward-slash separator inside the name", () => {
-    expect(() => resolveProjectDir("PARZVL/sub")).toThrow(PathSafetyError);
+    expect(() => resolveProjectDir("ACME/sub")).toThrow(PathSafetyError);
   });
 
   it("throws on a backslash separator inside the name", () => {
-    expect(() => resolveProjectDir("PARZVL\\sub")).toThrow(PathSafetyError);
+    expect(() => resolveProjectDir("ACME\\sub")).toThrow(PathSafetyError);
   });
 
   it("throws on '..' anywhere in the name (e.g. 'foo..bar')", () => {
@@ -146,19 +146,19 @@ describe("resolveProjectDir — empty / whitespace", () => {
 
   it("normalizes trailing space (strict trim, then re-validate)", () => {
     // Behavioral choice (per the implementation): trim-then-validate.
-    const got = resolveProjectDir("PARZVL ");
-    expect(got).toBe(path.join(vaultRoot, "05-Projects", "PARZVL"));
+    const got = resolveProjectDir("ACME ");
+    expect(got).toBe(path.join(vaultRoot, "05-Projects", "ACME"));
   });
 
   it("normalizes leading whitespace too", () => {
-    const got = resolveProjectDir("  PARZVL");
-    expect(got).toBe(path.join(vaultRoot, "05-Projects", "PARZVL"));
+    const got = resolveProjectDir("  ACME");
+    expect(got).toBe(path.join(vaultRoot, "05-Projects", "ACME"));
   });
 });
 
 describe("resolveProjectDir — control characters", () => {
   it("throws on a trailing NUL byte", () => {
-    expect(() => resolveProjectDir(`PARZVL${NUL}`)).toThrow(PathSafetyError);
+    expect(() => resolveProjectDir(`ACME${NUL}`)).toThrow(PathSafetyError);
   });
 
   it("throws on a NUL byte in the middle of the name", () => {

@@ -99,7 +99,7 @@ const TOOLS: Tool[] = [
         },
         save_to_project: {
           type: "string",
-          description: "Vault project folder name (e.g. \"PARZVL\"). Sanitized; must be [A-Za-z0-9_.-].",
+          description: "Vault project folder name (e.g. \"ACME\"). Sanitized; must be [A-Za-z0-9_.-].",
         },
       },
       required: ["identifier"],

@@ -45,9 +45,9 @@ Follow-up prompts that work well:
 
 ---
 
-## Recipe 2 — "Save Cursor's DESIGN.md into my PARZVL project"
+## Recipe 2 — "Save Cursor's DESIGN.md into my ACME project"
 
-> "Save Cursor's DESIGN.md into my PARZVL project."
+> "Save Cursor's DESIGN.md into my ACME project."
 
 Tools under the hood: `search_styles` → `get_style` → `save_to_project`
 
@@ -66,7 +66,7 @@ Path resolution:
 
 Variants:
 
-> "Save it to PARZVL/Beard-Club instead — Beard Club is a sub-project."
+> "Save it to ACME/Sub-Project instead — Sub-Project is a sub-project."
 > "Don't save it yet, just show me the DESIGN.md so I can read it first." *(routes to `get_design_md` instead)*
 
 ---
@@ -161,7 +161,7 @@ Together, the loop is: **search Refero → save DESIGN.md → /stitch-design-tas
 | `get_style` | Fetch full detail + similar for one style by id or name | "Pull the full breakdown for Linear." |
 | `list_similar` | Return Refero's own `similar` ranking for a style | "What's similar to Vercel?" |
 | `get_design_md` | Generate DESIGN.md content without writing it | "Show me the DESIGN.md before saving it." |
-| `save_to_project` | Generate + write DESIGN.md into a vault project | "Save it into my PARZVL project." |
+| `save_to_project` | Generate + write DESIGN.md into a vault project | "Save it into my ACME project." |
 | `refresh_catalog` | Walk all pages, refresh local mirror + embeddings | "Refresh the Refero catalog." |
 
 For the empirical API contract behind these, see [`api-surface.md`](api-surface.md).

@@ -111,7 +111,7 @@ A few prompts that route cleanly:
 ```
 
 ```
-"Save Cursor's DESIGN.md into my PARZVL project."
+"Save Cursor's DESIGN.md into my ACME project."
 ```
 
 ```

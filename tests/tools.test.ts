@@ -48,7 +48,7 @@ let vaultRoot: string;
 beforeEach(() => {
   cacheDir = fs.mkdtempSync(path.join(os.tmpdir(), "refero-mcp-tools-cache-"));
   vaultRoot = fs.mkdtempSync(path.join(os.tmpdir(), "refero-mcp-tools-vault-"));
-  fs.mkdirSync(path.join(vaultRoot, "05-Projects", "PARZVL"), {
+  fs.mkdirSync(path.join(vaultRoot, "05-Projects", "ACME"), {
     recursive: true,
   });
 
@@ -302,13 +302,13 @@ describe("handleDesignMd", () => {
 
     const out = await handleDesignMd({
       identifier: "elevenlabs",
-      save_to_project: "PARZVL",
+      save_to_project: "ACME",
     });
 
     const expected = path.join(
       vaultRoot,
       "05-Projects",
-      "PARZVL",
+      "ACME",
       "DESIGN.md",
     );
     expect(out.savedTo).toBe(expected);
