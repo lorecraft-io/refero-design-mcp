@@ -304,6 +304,6 @@ Before submitting the refero-mcp README:
 - [ ] At least one "Until then" / "That's it." / "If [X] ships [Y], I'll be genuinely happy" stance line.
 - [ ] First-person "I" used 6–12 times, never as filler.
 - [ ] No banned words (see list above).
-- [ ] `Built by [Nate Davidovich / Lorecraft](https://github.com/lorecraft-io)` footer — never "Nathan".
+- [ ] `Built by [Nate Davidovich / Lorecraft](https://github.com/lorecraft-io)` footer, byline form exactly as written.
 - [ ] `## Security: gitleaks pre-commit hook` boilerplate at the bottom.
 - [ ] MIT license one-liner under `## License`.
