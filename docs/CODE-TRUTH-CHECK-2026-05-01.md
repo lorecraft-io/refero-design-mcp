@@ -1,7 +1,7 @@
 # Code-Truth Check — README vs src/ (2026-05-01)
 
 Verifier: code-analyzer (agent #3, code-truth)
-Inputs: `/Users/nathandavidovich/code/lorecraft/refero-mcp/README.md`, `src/**`, `package.json`, `LICENSE`, `.env.example`, `docs/USAGE.md`, `docs/api-surface.md`
+Inputs: `/Users/you/code/lorecraft/refero-mcp/README.md`, `src/**`, `package.json`, `LICENSE`, `.env.example`, `docs/USAGE.md`, `docs/api-surface.md`
 
 ## Verdict: FAIL
 
@@ -60,7 +60,7 @@ No tool args are *misdescribed*; the README just consistently uses fictional too
 | `REFERO_CACHE_TTL_MS`, default `86400000` (24h) | `DEFAULT_REFERO_CACHE_TTL_MS = 24 * 60 * 60 * 1000` = 86,400,000 (line 44) | OK |
 | `REFERO_MCP_VAULT_DIR`, default unset, "Required for `save_to_project`" | `resolveVaultDir` returns `null` when unset (line 137–146); `path-safety.ts:33–40` throws `PathSafetyError` only when a caller tries to save without it set | Default OK; "Required" framing OK because `save_to_project` arg is what triggers the check |
 
-No env var listed in the README is missing from `config.ts`. No env var in `config.ts` is missing from the README. **No `/Users/nathandavidovich/Desktop/BRAIN2` appears anywhere in `src/`, `README.md`, `.env.example`, or `package.json`** — verified by grep, no hits.
+No env var listed in the README is missing from `config.ts`. No env var in `config.ts` is missing from the README. **No `/Users/you/Desktop/MyVault` appears anywhere in `src/`, `README.md`, `.env.example`, or `package.json`** — verified by grep, no hits.
 
 One soft mismatch: README footnote on `REFERO_MCP_VAULT_DIR` says *"If unset, `refero_design_md` returns markdown but won't write to disk."* Code matches *only when the LLM omits `save_to_project`*. If the LLM passes `save_to_project` while `REFERO_MCP_VAULT_DIR` is unset, the call **throws** `PathSafetyError: REFERO_MCP_VAULT_DIR is not set; cannot resolve vault root` (`path-safety.ts:34–39`) rather than silently degrading. Worth a one-line clarification but not blocking.
 
@@ -116,7 +116,7 @@ All NL examples in the README are implementable. The only thing they don't tell 
 
 - `claude mcp add refero -- npx -y fidgetcoding-refero-mcp` — runs the CLI bin from the published npm package. The package is not yet on npm (no `npm view` was run as part of this check; verifier is offline-by-default), but the local `dist/cli.js` is built and the bin is correctly declared. Once published, this command will work exactly as written.
 - "Restart Claude Code and start describing the look you want." — Implementable; nothing to verify in code.
-- `.env.example` referenced as "ships in the repo root" — present at `/Users/nathandavidovich/code/lorecraft/refero-mcp/.env.example`. **OK.**
+- `.env.example` referenced as "ships in the repo root" — present at `/Users/you/code/lorecraft/refero-mcp/.env.example`. **OK.**
 - `docs/USAGE.md` and `docs/api-surface.md` linked from README — both present in `docs/`. **OK.**
 
 `npm install` / `npm run build` are NOT mentioned in the README quick-start — README is install-via-MCP-only, which is the right call for a published npm bin. Not a bug.
@@ -165,18 +165,18 @@ All NL examples in the README are implementable. The only thing they don't tell 
 
 Files referenced (absolute paths):
 
-- `/Users/nathandavidovich/code/lorecraft/refero-mcp/README.md`
-- `/Users/nathandavidovich/code/lorecraft/refero-mcp/package.json`
-- `/Users/nathandavidovich/code/lorecraft/refero-mcp/LICENSE`
-- `/Users/nathandavidovich/code/lorecraft/refero-mcp/.env.example`
-- `/Users/nathandavidovich/code/lorecraft/refero-mcp/src/server.ts`
-- `/Users/nathandavidovich/code/lorecraft/refero-mcp/src/config.ts`
-- `/Users/nathandavidovich/code/lorecraft/refero-mcp/src/cli.ts`
-- `/Users/nathandavidovich/code/lorecraft/refero-mcp/src/path-safety.ts`
-- `/Users/nathandavidovich/code/lorecraft/refero-mcp/src/tools/search.ts`
-- `/Users/nathandavidovich/code/lorecraft/refero-mcp/src/tools/get.ts`
-- `/Users/nathandavidovich/code/lorecraft/refero-mcp/src/tools/design-md.ts`
-- `/Users/nathandavidovich/code/lorecraft/refero-mcp/src/tools/similar.ts`
-- `/Users/nathandavidovich/code/lorecraft/refero-mcp/src/tools/list.ts`
-- `/Users/nathandavidovich/code/lorecraft/refero-mcp/src/tools/refresh.ts`
-- `/Users/nathandavidovich/code/lorecraft/refero-mcp/src/tools/shared.ts`
+- `/Users/you/code/lorecraft/refero-mcp/README.md`
+- `/Users/you/code/lorecraft/refero-mcp/package.json`
+- `/Users/you/code/lorecraft/refero-mcp/LICENSE`
+- `/Users/you/code/lorecraft/refero-mcp/.env.example`
+- `/Users/you/code/lorecraft/refero-mcp/src/server.ts`
+- `/Users/you/code/lorecraft/refero-mcp/src/config.ts`
+- `/Users/you/code/lorecraft/refero-mcp/src/cli.ts`
+- `/Users/you/code/lorecraft/refero-mcp/src/path-safety.ts`
+- `/Users/you/code/lorecraft/refero-mcp/src/tools/search.ts`
+- `/Users/you/code/lorecraft/refero-mcp/src/tools/get.ts`
+- `/Users/you/code/lorecraft/refero-mcp/src/tools/design-md.ts`
+- `/Users/you/code/lorecraft/refero-mcp/src/tools/similar.ts`
+- `/Users/you/code/lorecraft/refero-mcp/src/tools/list.ts`
+- `/Users/you/code/lorecraft/refero-mcp/src/tools/refresh.ts`
+- `/Users/you/code/lorecraft/refero-mcp/src/tools/shared.ts`

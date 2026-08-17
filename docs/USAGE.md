@@ -130,7 +130,7 @@ Typical output:
   "removedStyles": 0,
   "embeddingsRefreshed": 4,
   "durationMs": 2800,
-  "cacheDir": "/Users/nathandavidovich/.cache/refero-mcp"
+  "cacheDir": "/Users/you/.cache/refero-mcp"
 }
 ```
 

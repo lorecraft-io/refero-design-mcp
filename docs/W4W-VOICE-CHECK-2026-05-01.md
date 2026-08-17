@@ -1,15 +1,15 @@
 # /w4w Voice Audit — README (2026-05-01)
 
 Auditor: /w4w voice auditor
-Target: `/Users/nathandavidovich/code/lorecraft/refero-mcp/README.md` (217 lines, mtime 1777690770)
+Target: `/Users/you/code/lorecraft/refero-mcp/README.md` (217 lines, mtime 1777690770)
 References:
-- `/Users/nathandavidovich/Desktop/BRAIN2/05-Projects/FIDGETCODING/GITHUB/LORECRAFT-REPOS/morgen-mcp/README.md` (443 lines)
-- `/Users/nathandavidovich/Desktop/BRAIN2/05-Projects/FIDGETCODING/GITHUB/LORECRAFT-REPOS/motion-mcp/README.md` (400 lines)
-- `/Users/nathandavidovich/code/lorecraft/fidgetflo/README.md` (366 lines)
+- `/Users/you/Desktop/MyVault/05-Projects/FIDGETCODING/GITHUB/LORECRAFT-REPOS/morgen-mcp/README.md` (443 lines)
+- `/Users/you/Desktop/MyVault/05-Projects/FIDGETCODING/GITHUB/LORECRAFT-REPOS/motion-mcp/README.md` (400 lines)
+- `/Users/you/code/lorecraft/fidgetflo/README.md` (366 lines)
 
 ## Verdict: PASS (with low-risk polish recommendations)
 
-The README is short by design ("simple for this one"), but the voice, structure, and install pattern all match the morgen-mcp / motion-mcp / fidgetflo bar. Pre-rewrite there were two factual bugs (default-vault claim that contradicted source, invented tool names); the current rewrite has fixed both. No "Nathan" anywhere. No `BRAIN2` defaults. No corp-speak. Anchor links resolve.
+The README is short by design ("simple for this one"), but the voice, structure, and install pattern all match the morgen-mcp / motion-mcp / fidgetflo bar. Pre-rewrite there were two factual bugs (default-vault claim that contradicted source, invented tool names); the current rewrite has fixed both. No "Nathan" anywhere. No `MyVault` defaults. No corp-speak. Anchor links resolve.
 
 The remaining items below are nits — none of them block ship.
 

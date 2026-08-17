@@ -7,7 +7,7 @@
  * Maps a user-supplied "project name" to an absolute filesystem path under
  * `<vault>/05-Projects/<NAME>/`. Vault root is read from
  * REFERO_MCP_VAULT_DIR (via loadConfig) so this test never touches the real
- * BRAIN2 vault.
+ * MyVault vault.
  *
  * The function MUST reject:
  *   1. Path-traversal segments: "..", anything containing "/" or "\\".

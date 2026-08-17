@@ -7,7 +7,7 @@
  *  - `fetch` stubbed to serve fixture catalog + fixture details
  *  - OPENAI_API_KEY unset → keyword scorer
  *
- * No test touches the user's real ~/.refero-cache/ or BRAIN2 vault.
+ * No test touches the user's real ~/.refero-cache/ or MyVault vault.
  *
  * Tools under test (from src/tools/):
  *   handleSearch    — natural-language ranked results

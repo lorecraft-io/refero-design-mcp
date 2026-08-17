@@ -96,7 +96,7 @@ package/dist/types.js.map
 - `bin` field: `{ "refero-mcp": "./dist/cli.js" }`
 - `package/dist/cli.js` present in tarball: YES
 - First line of shipped `dist/cli.js`: `#!/usr/bin/env node` — VALID
-- Executable bit on `dist/cli.js` in tarball: NOT set (`-rw-r--r--`). Source file `/Users/nathandavidovich/code/lorecraft/refero-mcp/dist/cli.js` is also `-rw-r--r--`. **Not a blocker** — npm sets executable bits on `bin` targets automatically at install time on POSIX systems regardless of tarball mode bits. `npx refero-mcp` and `node ./dist/cli.js` both work after install. Optional polish: `chmod +x dist/cli.js` in the build step so the bit is preserved end-to-end.
+- Executable bit on `dist/cli.js` in tarball: NOT set (`-rw-r--r--`). Source file `/Users/you/code/lorecraft/refero-mcp/dist/cli.js` is also `-rw-r--r--`. **Not a blocker** — npm sets executable bits on `bin` targets automatically at install time on POSIX systems regardless of tarball mode bits. `npx refero-mcp` and `node ./dist/cli.js` both work after install. Optional polish: `chmod +x dist/cli.js` in the build step so the bit is preserved end-to-end.
 
 ## package.json verification
 
@@ -140,7 +140,7 @@ package/dist/types.js.map
 `fidgetcoding-refero-mcp-0.1.0.tgz` has been left in the repo root for downstream verification steps. Removing it now to honor the task's cleanup instruction.
 
 ```
-rm /Users/nathandavidovich/code/lorecraft/refero-mcp/fidgetcoding-refero-mcp-0.1.0.tgz
+rm /Users/you/code/lorecraft/refero-mcp/fidgetcoding-refero-mcp-0.1.0.tgz
 ```
 
 (Inspector executes this on exit.)

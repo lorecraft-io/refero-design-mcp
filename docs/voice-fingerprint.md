@@ -1,9 +1,9 @@
 # Voice Fingerprint — Nate Davidovich READMEs
 
 Source READMEs sampled:
-- `/Users/nathandavidovich/Desktop/BRAIN2/05-Projects/FIDGETCODING/GITHUB/LORECRAFT-REPOS/morgen-mcp/README.md`
-- `/Users/nathandavidovich/Desktop/BRAIN2/05-Projects/FIDGETCODING/GITHUB/LORECRAFT-REPOS/motion-mcp/README.md`
-- `/Users/nathandavidovich/code/lorecraft/fidgetflo/README.md`
+- `/Users/you/Desktop/MyVault/05-Projects/FIDGETCODING/GITHUB/LORECRAFT-REPOS/morgen-mcp/README.md`
+- `/Users/you/Desktop/MyVault/05-Projects/FIDGETCODING/GITHUB/LORECRAFT-REPOS/motion-mcp/README.md`
+- `/Users/you/code/lorecraft/fidgetflo/README.md`
 
 Use this as a calibration sheet for the `refero-mcp` README. Match the rhythm and stance — do not copy phrases verbatim.
 
